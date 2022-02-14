@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!--Directiva do VUE JS : v-once, atualiza os dados uma unica vez no caso titulo é atualizado uma unica vez. -->
+    <p v-once>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <!--Directiva do VUE JS : v-bind, são uma das directivas utilizadas pelo VUE -->
+    <a v-bind:href="link">Goggle</a>
+    <hr>
+    <!--Directiva do VUE JS : v-html, interpreta o html dentro da instância do VUE, no caso o atributo linkHtml -->
+    <p v-html="linkHtml"></p> 
+</div>
+
+<script>
+    new Vue({
+      el: '#app',
+      data: {
+          titulo: 'Usando VUEJS!',
+          link: 'http://goggle.com.br',
+          linkHtml: '<a href="http://goggle.com.br">Google</a>'
+      },
+      methods: {
+          saudacao: function() {
+            this.titulo = 'Bom dia!!!'  
+            return this.titulo
+          }
+      }
+    })
+</script>

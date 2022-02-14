@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<style>
+    #app {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .titulo1 {
+        position: absolute;
+        left: 20px;
+        top: 25px;
+    }
+
+    .titulo2 {
+        position: absolute;
+        left: 745px;
+        top: 25px;
+    }
+
+    .titulo3 {
+        position: absolute;
+        left: 1460px;
+        top: 25px;
+    }
+
+</style>
+
+<div id="app">
+    <section class="demo" :class="{c1: aplicarC1}"
+        @click="aplicarC1 = !aplicarC1">
+        <h3 class="titulo1">vermelho</h3>
+    </section>
+
+    <section class="demo" :class="{c2: aplicarC2}" 
+        @click="{aplicarC2 = !aplicarC2}">
+        <h3 class="titulo2">Verde
+        </h3>
+    </section>
+
+    <section class="demo" :class="{c3: aplicarC3}"
+        @click="{aplicarC3 = !aplicarC3}">
+        <h3 class="titulo3">Azul</h3>
+    </section>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            aplicarC1: false,
+            aplicarC2: false,
+            aplicarC3: false
+        }
+    })
+</script>
